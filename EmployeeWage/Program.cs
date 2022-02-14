@@ -16,19 +16,24 @@ namespace EmployeeWage
             const int PRESENT = 1;
             const int ABSENT = 0;
             const int PARTIAL_PRESENT = 2;
+            int day = 0;
             Random random = new Random();
-            int empCheck=random.Next(0,3);
             int totalWage = 0;
-            switch (empCheck)
+            while (day < 20)
             {
-                case PARTIAL_PRESENT:
-                    totalWage = PART_TIME_HOUR * WAGE_PER_HOUR;
-                    break;
-                case ABSENT:
-                    break;
-                case PRESENT:
-                    totalWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
-                    break;
+                int empCheck = random.Next(0, 3);
+                switch (empCheck)
+                {
+                    case PARTIAL_PRESENT:
+                        totalWage += PART_TIME_HOUR * WAGE_PER_HOUR;
+                        break;
+                    case ABSENT:
+                        break;
+                    case PRESENT:
+                        totalWage += WAGE_PER_HOUR * FULL_DAY_HOUR;
+                        break;
+                }
+                day++;
             }
             Console.WriteLine("Daily employee wage is " + totalWage) ;
         }
