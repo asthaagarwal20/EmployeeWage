@@ -10,13 +10,27 @@ namespace EmployeeWage
     {
         static void Main(string[] args)
         {
-            int WAGE_PER_HOUR = 20;
-            int FULL_DAY_HOUR = 8;
-            int PART_TIME_HOUR = 8;
-            int dailyEmployeeWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
-            int partTimeEmployeeWage = PART_TIME_HOUR * WAGE_PER_HOUR;
-            Console.WriteLine("Daily employee wage is "+dailyEmployeeWage);
-            Console.WriteLine("Part time employee wage is " + partTimeEmployeeWage);
+            const int WAGE_PER_HOUR = 20;
+            const int FULL_DAY_HOUR = 8;
+            const int PART_TIME_HOUR = 4;
+            const int PRESENT = 1;
+            const int ABSENT = 0;
+            const int PARTIAL_PRESENT = 2;
+            Random random = new Random();
+            int empCheck=random.Next(0,3);
+            int totalWage = 0;
+            switch (empCheck)
+            {
+                case PARTIAL_PRESENT:
+                    totalWage = PART_TIME_HOUR * WAGE_PER_HOUR;
+                    break;
+                case ABSENT:
+                    break;
+                case PRESENT:
+                    totalWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
+                    break;
+            }
+            Console.WriteLine("Daily employee wage is " + totalWage) ;
         }
     }
 }
