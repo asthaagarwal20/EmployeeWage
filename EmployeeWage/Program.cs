@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +10,10 @@ namespace EmployeeWage
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to employee wage computation program");
-                Random random=new Random();
-            if (random.Next(0, 2) == 0)
-                Console.WriteLine("Employee is Absent");
-            else
-                Console.WriteLine("Employee is Present");
+            int WAGE_PER_HOUR = 20;
+            int FULL_DAY_HOUR = 8;
+            int dailyEmployeeWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
+            Console.WriteLine("Daily employee wage is "+dailyEmployeeWage);
         }
     }
 }
